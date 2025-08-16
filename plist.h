@@ -19,6 +19,7 @@ bool append(Plist l, void *elemptr, Bitmask bm, size_t size);
 struct filament pop(Plist l);
 
 size_t length(Plist l);
+// size_t indexof(Plist l, void *elem, size_t size);
 
 void clear(Plist l, void (*destroy_element)(void *));
 
