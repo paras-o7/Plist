@@ -9,17 +9,17 @@
 void insert_int_into_list(Plist l, int i) {
     int *p = malloc(sizeof (int));
     *p = i;
-    append(l, p, INT_TYPE);
+    append(l, p, INT_TYPE, sizeof i);
 }
 void insert_float_into_list(Plist l, float i) {
     float *p = malloc(sizeof (float));
     *p = i;
-    append(l, p, FLOAT_TYPE);
+    append(l, p, FLOAT_TYPE, sizeof i);
 }
 void insert_char_into_list(Plist l, char i) {
     char *p = malloc(sizeof (char));
     *p = i;
-    append(l, p, CHAR_TYPE);
+    append(l, p, CHAR_TYPE, sizeof i);
 }
 
 int main(void) {
@@ -30,7 +30,7 @@ int main(void) {
     insert_float_into_list(list, 3.14f);
 
     struct filament f;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 3; i >= 0; i--) {
         printf("%d\t", i);
         f = pop(list);
         if (f.bm & CHAR_TYPE)
